@@ -1,0 +1,25 @@
+{
+  "name": "weronika-kozubek-cv",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Professional CV website for Dr Weronika Kozubek - Dental Professional & Aesthetic Medicine Specialist",
+  "keywords": ["cv", "resume", "dentist", "aesthetic-medicine", "portfolio", "professional"],
+  "author": "Dr Weronika Kozubek",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.8"
+  }
+}
