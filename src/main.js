@@ -1,9 +1,25 @@
 import "./style.css";
 import cvHtml from "./main.html?raw";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+	apiKey: "AIzaSyCAUZFgtTRkKZqW5o975yf5EOwY_x-X-eY",
+	authDomain: "wera-69a43.firebaseapp.com",
+	projectId: "wera-69a43",
+	storageBucket: "wera-69a43.firebasestorage.app",
+	messagingSenderId: "374100397658",
+	appId: "1:374100397658:web:4031b8e873bc4be69e9263",
+	measurementId: "G-PRG5M2ETQQ",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Main CV content and structure
-const app = document.querySelector("#app");
-app.innerHTML = cvHtml;
+const appElement = document.querySelector("#app");
+appElement.innerHTML = cvHtml;
 
 // Enhanced JavaScript functionality
 function initializeWebsite() {
@@ -78,7 +94,8 @@ function createMobileMenu() {
 
 	// Create mobile language toggle (for navbar)
 	const mobileLangToggle = document.createElement("div");
-	mobileLangToggle.className = "md:hidden language-toggle-mobile flex items-center bg-gray-100 rounded-full p-1 mr-2";
+	mobileLangToggle.className =
+		"md:hidden language-toggle-mobile flex items-center bg-gray-100 rounded-full p-1 mr-2";
 	mobileLangToggle.innerHTML = `
 		<button id="mobile-lang-en" class="flex items-center px-2 py-1 rounded-full transition-all duration-200 text-sm font-medium">
 			🇬🇧 EN
@@ -302,74 +319,78 @@ function showNotification(message) {
 function initializeLanguageSystem() {
 	// Detect browser language
 	const browserLang = navigator.language.substring(0, 2);
-	const defaultLang = browserLang === 'de' ? 'de' : 'en';
-	
+	const defaultLang = browserLang === "de" ? "de" : "en";
+
 	// Set initial language
-	let currentLang = localStorage.getItem('cv-language') || defaultLang;
-	
+	let currentLang = localStorage.getItem("cv-language") || defaultLang;
+
 	// Language toggle buttons
-	const langEnBtn = document.getElementById('lang-en');
-	const langDeBtn = document.getElementById('lang-de');
-	const mobileLangEnBtn = document.getElementById('mobile-lang-en');
-	const mobileLangDeBtn = document.getElementById('mobile-lang-de');
-	
+	const langEnBtn = document.getElementById("lang-en");
+	const langDeBtn = document.getElementById("lang-de");
+	const mobileLangEnBtn = document.getElementById("mobile-lang-en");
+	const mobileLangDeBtn = document.getElementById("mobile-lang-de");
+
 	// Update active language button
 	function updateActiveLanguage(lang) {
 		// Desktop buttons
 		if (langEnBtn && langDeBtn) {
-			langEnBtn.classList.remove('bg-blue-500', 'text-white');
-			langDeBtn.classList.remove('bg-blue-500', 'text-white');
-			langEnBtn.classList.add('text-gray-600');
-			langDeBtn.classList.add('text-gray-600');
-			
-			if (lang === 'en') {
-				langEnBtn.classList.add('bg-blue-500', 'text-white');
-				langEnBtn.classList.remove('text-gray-600');
+			langEnBtn.classList.remove("bg-blue-500", "text-white");
+			langDeBtn.classList.remove("bg-blue-500", "text-white");
+			langEnBtn.classList.add("text-gray-600");
+			langDeBtn.classList.add("text-gray-600");
+
+			if (lang === "en") {
+				langEnBtn.classList.add("bg-blue-500", "text-white");
+				langEnBtn.classList.remove("text-gray-600");
 			} else {
-				langDeBtn.classList.add('bg-blue-500', 'text-white');
-				langDeBtn.classList.remove('text-gray-600');
+				langDeBtn.classList.add("bg-blue-500", "text-white");
+				langDeBtn.classList.remove("text-gray-600");
 			}
 		}
-		
+
 		// Mobile buttons
 		if (mobileLangEnBtn && mobileLangDeBtn) {
-			mobileLangEnBtn.classList.remove('bg-blue-500', 'text-white');
-			mobileLangDeBtn.classList.remove('bg-blue-500', 'text-white');
-			mobileLangEnBtn.classList.add('text-gray-600');
-			mobileLangDeBtn.classList.add('text-gray-600');
-			
-			if (lang === 'en') {
-				mobileLangEnBtn.classList.add('bg-blue-500', 'text-white');
-				mobileLangEnBtn.classList.remove('text-gray-600');
+			mobileLangEnBtn.classList.remove("bg-blue-500", "text-white");
+			mobileLangDeBtn.classList.remove("bg-blue-500", "text-white");
+			mobileLangEnBtn.classList.add("text-gray-600");
+			mobileLangDeBtn.classList.add("text-gray-600");
+
+			if (lang === "en") {
+				mobileLangEnBtn.classList.add("bg-blue-500", "text-white");
+				mobileLangEnBtn.classList.remove("text-gray-600");
 			} else {
-				mobileLangDeBtn.classList.add('bg-blue-500', 'text-white');
-				mobileLangDeBtn.classList.remove('text-gray-600');
+				mobileLangDeBtn.classList.add("bg-blue-500", "text-white");
+				mobileLangDeBtn.classList.remove("text-gray-600");
 			}
 		}
 	}
-	
+
 	// Switch language function
 	function switchLanguage(lang) {
 		currentLang = lang;
-		localStorage.setItem('cv-language', lang);
-		
+		localStorage.setItem("cv-language", lang);
+
 		// Update all elements with data-en and data-de attributes
-		document.querySelectorAll('[data-en][data-de]').forEach(element => {
+		document.querySelectorAll("[data-en][data-de]").forEach((element) => {
 			const translation = element.getAttribute(`data-${lang}`);
 			if (translation) {
 				element.textContent = translation;
 			}
 		});
-		
+
 		updateActiveLanguage(lang);
 	}
-	
+
 	// Event listeners for language buttons
-	if (langEnBtn) langEnBtn.addEventListener('click', () => switchLanguage('en'));
-	if (langDeBtn) langDeBtn.addEventListener('click', () => switchLanguage('de'));
-	if (mobileLangEnBtn) mobileLangEnBtn.addEventListener('click', () => switchLanguage('en'));
-	if (mobileLangDeBtn) mobileLangDeBtn.addEventListener('click', () => switchLanguage('de'));
-	
+	if (langEnBtn)
+		langEnBtn.addEventListener("click", () => switchLanguage("en"));
+	if (langDeBtn)
+		langDeBtn.addEventListener("click", () => switchLanguage("de"));
+	if (mobileLangEnBtn)
+		mobileLangEnBtn.addEventListener("click", () => switchLanguage("en"));
+	if (mobileLangDeBtn)
+		mobileLangDeBtn.addEventListener("click", () => switchLanguage("de"));
+
 	// Initialize with current language
 	switchLanguage(currentLang);
 }
