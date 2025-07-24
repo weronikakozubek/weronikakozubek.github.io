@@ -2,240 +2,257 @@
 
 /* Custom styles for the CV website */
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 /* Enhanced scroll animations */
 .scroll-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	opacity: 0;
+	transform: translateY(20px);
+	transition:
+		opacity 0.6s ease-out,
+		transform 0.6s ease-out;
 }
 
 .scroll-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* Skill progress bars */
 .skill-progress {
-  transition: width 1s ease-out;
+	transition: width 1s ease-out;
 }
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Enhanced gradient backgrounds */
 .bg-gradient-professional {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 /* Custom navbar backdrop */
 .navbar-backdrop {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 /* Professional section dividers */
 .section-divider {
-  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+	background: linear-gradient(90deg, transparent, #3b82f6, transparent);
 }
 
 /* Enhanced card shadows */
 .card-shadow {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .card-shadow:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	box-shadow:
+		0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Professional button styles */
 .btn-professional {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  border: none;
-  color: white;
-  transition: all 0.3s ease;
+	background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+	border: none;
+	color: white;
+	transition: all 0.3s ease;
 }
 
 .btn-professional:hover {
-  background: linear-gradient(135deg, #1d4ed8, #1e40af);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+	background: linear-gradient(135deg, #1d4ed8, #1e40af);
+	transform: translateY(-1px);
+	box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Enhanced animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+	animation: fadeInUp 0.6s ease-out;
 }
 
 .animate-pulse-hover:hover {
-  animation: pulse 0.3s ease-in-out;
+	animation: pulse 0.3s ease-in-out;
 }
 
 /* Enhanced navigation */
 .nav-link {
-  position: relative;
-  transition: color 0.3s ease;
+	position: relative;
+	transition: color 0.3s ease;
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-  transition: width 0.3s ease;
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+	transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
-  width: 100%;
+	width: 100%;
 }
 
 /* Professional skill badges */
 .skill-badge {
-  transition: all 0.3s ease;
-  cursor: default;
+	transition: all 0.3s ease;
+	cursor: default;
 }
 
 .skill-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Enhanced hero section */
 .hero-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background-size: 400% 400%;
+	animation: gradientShift 15s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* Professional timeline */
 .timeline-item {
-  position: relative;
-  padding-left: 2rem;
+	position: relative;
+	padding-left: 2rem;
 }
 
 .timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 12px;
-  height: 12px;
-  background: #3b82f6;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 3px #3b82f6;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.5rem;
+	width: 12px;
+	height: 12px;
+	background: #3b82f6;
+	border-radius: 50%;
+	border: 3px solid white;
+	box-shadow: 0 0 0 3px #3b82f6;
 }
 
 .timeline-item::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 1.5rem;
-  width: 2px;
-  height: calc(100% - 1rem);
-  background: linear-gradient(to bottom, #3b82f6, transparent);
+	content: "";
+	position: absolute;
+	left: 5px;
+	top: 1.5rem;
+	width: 2px;
+	height: calc(100% - 1rem);
+	background: linear-gradient(to bottom, #3b82f6, transparent);
 }
 
 .timeline-item:last-child::after {
-  display: none;
+	display: none;
 }
 
 /* Enhanced card styling */
 .experience-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  transition: all 0.3s ease;
+	background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+	border: 1px solid rgba(59, 130, 246, 0.1);
+	transition: all 0.3s ease;
 }
 
 .experience-card:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	border-color: rgba(59, 130, 246, 0.3);
+	box-shadow:
+		0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Mobile responsiveness enhancements */
 @media (max-width: 768px) {
-  .mobile-padding {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .mobile-text-center {
-    text-align: center;
-  }
+	.mobile-padding {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.mobile-text-center {
+		text-align: center;
+	}
 }
 
 /* Print styles for PDF generation */
 @media print {
-  .no-print {
-    display: none !important;
-  }
-  
-  body {
-    background: white !important;
-    font-size: 12pt;
-    line-height: 1.4;
-  }
-  
-  .print-break {
-    page-break-before: always;
-  }
+	.no-print {
+		display: none !important;
+	}
+
+	body {
+		background: white !important;
+		font-size: 12pt;
+		line-height: 1.4;
+	}
+
+	.print-break {
+		page-break-before: always;
+	}
 }
 
 /* Responsive design improvements */
 @media (max-width: 640px) {
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  }
-  
-  .section-padding {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+	.hero-title {
+		font-size: 2.5rem;
+		line-height: 1.1;
+	}
+
+	.section-padding {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
 }
 
 /* Dark mode support (for future enhancement) */
 @media (prefers-color-scheme: dark) {
-  .dark-mode-ready {
-    background-color: #1f2937;
-    color: #f9fafb;
-  }
+	.dark-mode-ready {
+		background-color: #1f2937;
+		color: #f9fafb;
+	}
 }
