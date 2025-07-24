@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Weronika Kozubek - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body { 
+                font-size: 11px !important; 
+                line-height: 1.2 !important;
+                margin: 0;
+                padding: 0;
+            }
+            .print-break { page-break-inside: avoid; }
+            .no-print { display: none !important; }
+            .container { max-width: none !important; margin: 0 !important; padding: 0.3rem !important; }
+            h1 { font-size: 20px !important; margin-bottom: 0.2rem !important; }
+            h2 { font-size: 15px !important; margin: 0.4rem 0 0.3rem 0 !important; }
+            h3 { font-size: 13px !important; margin: 0.3rem 0 0.2rem 0 !important; }
+            .section { margin-bottom: 0.3rem !important; }
+            
+            /* Keep grid layouts for better print appearance */
+            .grid { 
+                display: grid !important; 
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.6rem !important;
+            }
+            .grid > div { margin-bottom: 0.3rem !important; }
+            
+            /* Specific grid layouts for different sections */
+            .md\\:grid-cols-2 { 
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.6rem !important;
+            }
+            
+            /* For the clinical experience grid within sections */
+            .text-xs.grid { 
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.4rem !important;
+            }
+        }
+        
+        body { font-family: 'Inter', sans-serif; }
+        .language-toggle button.active { background-color: #3b82f6; color: white; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 leading-relaxed">
+    <div class="no-print fixed top-4 right-4 z-50">
+        <div class="flex items-center gap-2">
+            <a href="/" class="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
+                ← Back to Full CV
+            </a>
+            <div class="language-toggle flex items-center bg-gray-100 rounded-full p-1">
+                <button id="lang-en" class="active flex items-center px-3 py-1 rounded-full transition-all duration-200 text-sm font-medium">
+                    🇬🇧 EN
+                </button>
+                <button id="lang-de" class="flex items-center px-3 py-1 rounded-full transition-all duration-200 text-sm font-medium">
+                    🇩🇪 DE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container max-w-4xl mx-auto p-6">
+        <!-- Header -->
+        <header class="text-center mb-2 print-break">
+            <h1 class="text-3xl font-bold text-gray-900">Dr Weronika Kozubek</h1>
+            <p class="text-lg text-blue-600 mb-1" 
+               data-en="Dental Professional & Aesthetic Medicine Specialist"
+               data-de="Zahnärztin & Spezialistin für Ästhetische Medizin">
+                Dental Professional & Aesthetic Medicine Specialist
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+                <div class="flex items-center">
+                    <span class="mr-1">📍</span>
+                    <span data-en="Gdańsk, Poland" data-de="Danzig, Polen">Gdańsk, Poland</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="mr-1">✉️</span>
+                    <span>weronikakozubek@onet.eu</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="mr-1">🎓</span>
+                    <span data-en="General Dentist" data-de="Zahnärztin">General Dentist</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section mb-4 print-break">
+            <p class="text-sm text-gray-700"
+               data-en="Highly motivated and graduated dental professional with a strong foundation in general dentistry and a completed postgraduate specialization in aesthetic medicine. Eager to apply comprehensive clinical knowledge and hands-on experience gained from extensive internships and specialized courses to a challenging and rewarding role. Possesses excellent communication skills and a passion for patient care."
+               data-de="Hoch motivierte und graduierte Zahnärztin mit solider Grundlage in der allgemeinen Zahnmedizin und abgeschlossener postgradualer Spezialisierung in der ästhetischen Medizin. Bestrebt, umfassendes klinisches Wissen und praktische Erfahrungen aus umfangreichen Praktika und Spezialkursen in einer herausfordernden und lohnenden Position anzuwenden. Besitzt ausgezeichnete Kommunikationsfähigkeiten und Leidenschaft für die Patientenbetreuung.">
+                Highly motivated and graduated dental professional with a strong foundation in general dentistry and a completed postgraduate specialization in aesthetic medicine. Eager to apply comprehensive clinical knowledge and hands-on experience gained from extensive internships and specialized courses to a challenging and rewarding role. Possesses excellent communication skills and a passion for patient care.
+            </p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <!-- Education -->
+            <section class="section print-break">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 border-b-2 border-blue-600 pb-1"
+                    data-en="Education" data-de="Bildung">
+                    Education
+                </h2>
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Postgraduate Studies in Aesthetic Medicine for Doctors"
+                            data-de="Postgraduales Studium in Ästhetischer Medizin für Ärzte">
+                            Postgraduate Studies in Aesthetic Medicine for Doctors
+                        </h3>
+                        <p class="text-xs text-blue-600">SWSM, Katowice, Poland</p>
+                        <p class="text-xs text-gray-600"
+                           data-en="October 2024 – June 2025 (Completed)"
+                           data-de="Oktober 2024 – Juni 2025 (Abgeschlossen)">
+                            October 2024 – June 2025 (Completed)
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="General Dentist"
+                            data-de="Zahnärztin">
+                            General Dentist
+                        </h3>
+                        <p class="text-xs text-blue-600">Medical University of Gdańsk, Poland</p>
+                        <p class="text-xs text-gray-600"
+                           data-en="2019-2024 (Completed)"
+                           data-de="2019-2024 (Abgeschlossen)">
+                            2019-2024 (Completed)
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages & Skills Summary -->
+            <section class="section print-break">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 border-b-2 border-blue-600 pb-1"
+                    data-en="Languages & Core Skills" data-de="Sprachen & Kernkompetenzen">
+                    Languages & Core Skills
+                </h2>
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Languages" data-de="Sprachen">Languages</h3>
+                        <div class="text-xs space-y-1">
+                            <div class="flex justify-between">
+                                <span data-en="Polish" data-de="Polnisch">Polish</span>
+                                <span class="text-green-600" data-en="Native" data-de="Muttersprache">Native</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span data-en="English" data-de="Englisch">English</span>
+                                <span class="text-blue-600">C1+</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span data-en="German" data-de="Deutsch">German</span>
+                                <span class="text-orange-600">B1+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Core Competencies" data-de="Kernkompetenzen">Core Competencies</h3>
+                        <ul class="text-xs space-y-1 text-gray-700">
+                            <li data-en="• Patient communication & education" data-de="• Patientenkommunikation & -aufklärung">• Patient communication & education</li>
+                            <li data-en="• Empathy & anxiety management" data-de="• Empathie & Angstmanagement">• Empathy & anxiety management</li>
+                            <li data-en="• Diagnostic interpretation" data-de="• Diagnostische Interpretation">• Diagnostic interpretation</li>
+                            <li data-en="• Interdisciplinary cooperation" data-de="• Interdisziplinäre Zusammenarbeit">• Interdisciplinary cooperation</li>
+                            <li data-en="• Precision & attention to detail" data-de="• Präzision & Aufmerksamkeit für Details">• Precision & attention to detail</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Clinical Experience -->
+        <section class="section mb-4 print-break">
+            <h2 class="text-xl font-bold text-gray-900 mb-3 border-b-2 border-blue-600 pb-1"
+                data-en="Clinical Experience" data-de="Klinische Erfahrung">
+                Clinical Experience
+            </h2>
+            <div class="space-y-2">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Internship at Provincial Dental Clinic"
+                            data-de="Praktikum in der Provinzialen Zahnklinik">
+                            Internship at Provincial Dental Clinic
+                        </h3>
+                        <span class="text-xs text-blue-600"
+                              data-en="October 2024 – September 2025"
+                              data-de="Oktober 2024 – September 2025">
+                            October 2024 – September 2025
+                        </span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <p class="font-medium text-gray-800 mb-1"
+                               data-en="General Procedures:"
+                               data-de="Allgemeine Verfahren:">General Procedures:</p>
+                            <ul class="text-gray-700 space-y-0.5">
+                                <li data-en="• Dental restorations & bonding" data-de="• Zahnrestaurationen & Bonding">• Dental restorations & bonding</li>
+                                <li data-en="• Caries treatment" data-de="• Kariesbehandlung">• Caries treatment</li>
+                                <li data-en="• Tooth extractions" data-de="• Zahnextraktionen">• Tooth extractions</li>
+                                <li data-en="• Scaling & curettage" data-de="• Zahnsteinentfernung & Kürettage">• Scaling & curettage</li>
+                                <li data-en="• Endodontic treatment" data-de="• Endodontische Behandlung">• Endodontic treatment</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800 mb-1"
+                               data-en="Pediatric Dentistry:"
+                               data-de="Kinderzahnmedizin:">Pediatric Dentistry:</p>
+                            <ul class="text-gray-700 space-y-0.5">
+                                <li data-en="• Pediatric caries treatment" data-de="• Kariesbehandlung bei Kindern">• Pediatric caries treatment</li>
+                                <li data-en="• Appliance adjustments" data-de="• Geräteanpassung">• Appliance adjustments</li>
+                                <li data-en="• Orthodontic check-ups" data-de="• Kieferorthopädische Kontrollen">• Orthodontic check-ups</li>
+                                <li data-en="• Intraoral scanning" data-de="• Intraorale Scantechnologie">• Intraoral scanning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Clinical Practice - University Dental Clinics"
+                            data-de="Klinische Praxis - Universitäre Zahnkliniken">
+                            Clinical Practice - University Dental Clinics
+                        </h3>
+                        <span class="text-xs text-blue-600"
+                              data-en="July 2023"
+                              data-de="Juli 2023">July 2023</span>
+                    </div>
+                    <p class="text-xs text-gray-700"
+                       data-en="Specialized rotations in Periodontology, Pediatric Dentistry, Oral Surgery, and Conservative Dentistry"
+                       data-de="Spezialisierte Rotationen in Parodontologie, Kinderzahnmedizin, Oralchirurgie und konservierender Zahnmedizin">
+                        Specialized rotations in Periodontology, Pediatric Dentistry, Oral Surgery, and Conservative Dentistry
+                    </p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Clinical Practice - Prodent Clinic, Gdańsk"
+                            data-de="Klinische Praxis - Prodent Klinik, Gdańsk">
+                            Clinical Practice - Prodent Clinic, Gdańsk
+                        </h3>
+                        <span class="text-xs text-blue-600"
+                              data-en="July 2020, 2021, 2022"
+                              data-de="Juli 2020, 2021, 2022">July 2020, 2021, 2022</span>
+                    </div>
+                    <p class="text-xs text-gray-700"
+                       data-en="Assisted dentists in various procedures in private practice setting"
+                       data-de="Unterstützte Zahnärzte bei verschiedenen Verfahren in privater Praxis">
+                        Assisted dentists in various procedures in private practice setting
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <!-- Technical Skills -->
+            <section class="section print-break">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 border-b-2 border-blue-600 pb-1"
+                    data-en="Technical Skills" data-de="Technische Fähigkeiten">
+                    Technical Skills
+                </h2>
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Clinical Procedures" data-de="Klinische Verfahren">Clinical Procedures</h3>
+                        <p class="text-xs text-gray-700"
+                           data-en="Dental Restorations • Endodontic Treatment • Tooth Extractions • Pediatric Dentistry • Scaling & Curettage"
+                           data-de="Zahnrestaurationen • Endodontische Behandlung • Zahnextraktionen • Kinderzahnmedizin • Zahnsteinentfernung & Kürettage">
+                            Dental Restorations • Endodontic Treatment • Tooth Extractions • Pediatric Dentistry • Scaling & Curettage
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Aesthetic Procedures" data-de="Ästhetische Verfahren">Aesthetic Procedures</h3>
+                        <p class="text-xs text-gray-700"
+                           data-en="Botox Injections • Dermal Fillers • Mesotherapy • PRP & PRF • Laser Therapy"
+                           data-de="Botox-Injektionen • Dermal-Filler • Mesotherapie • PRP & PRF • Lasertherapie">
+                            Botox Injections • Dermal Fillers • Mesotherapy • PRP & PRF • Laser Therapy
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Technology" data-de="Technologie">Technology</h3>
+                        <p class="text-xs text-gray-700"
+                           data-en="Intraoral Scanning • Digital Imaging • Dental Software • Microsoft Office"
+                           data-de="Intraorale Scantechnologie • Digitale Bildgebung • Zahnarzt-Software • Microsoft Office">
+                            Intraoral Scanning • Digital Imaging • Dental Software • Microsoft Office
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Development -->
+            <section class="section print-break">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 border-b-2 border-blue-600 pb-1"
+                    data-en="Professional Development" data-de="Berufliche Weiterbildung">
+                    Professional Development
+                </h2>
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Specialized Courses" data-de="Spezialisierte Kurse">Specialized Courses</h3>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li data-en="• Academy Of Composite Course - April 2025" data-de="• Academy Of Composite Kurs - April 2025">• Academy Of Composite Course - April 2025</li>
+                            <li data-en="• Dental Day Course - July 2025" data-de="• Dental Day Kurs - Juli 2025">• Dental Day Course - July 2025</li>
+                            <li data-en="• Emergency Medicine Course - March 2023, July 2025" data-de="• Notfallmedizin Kurs - März 2023, Juli 2025">• Emergency Medicine Course - March 2023, July 2025</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Professional Affiliations" data-de="Berufliche Mitgliedschaften">Professional Affiliations</h3>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li data-en="• Polish Dental Association - Member (2025)" data-de="• Polnische Zahnärztekammer - Mitglied (2025)">• Polish Dental Association - Member (2025)</li>
+                            <li data-en="• Polish Association of Dental Students - Member (2019-2024)" data-de="• Polnische Vereinigung der Zahnmedizinstudenten - Mitglied (2019-2024)">• Polish Association of Dental Students - Member (2019-2024)</li>
+                            <li data-en="• Pomeranian Dental Conference - Lead Volunteer (May 2024)" data-de="• Pommersche Zahnkonferenz - Hauptfreiwilliger (Mai 2024)">• Pomeranian Dental Conference - Lead Volunteer (May 2024)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-sm"
+                            data-en="Volunteer Experience" data-de="Freiwilligenerfahrung">Volunteer Experience</h3>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li data-en="• Dental volunteer at preschools - oral health education" data-de="• Zahnmedizinische Freiwilligenarbeit in Kindergärten">• Dental volunteer at preschools - oral health education</li>
+                            <li data-en="• Forum Gdańsk volunteer - event organization" data-de="• Forum Gdańsk Freiwilliger - Veranstaltungsorganisation">• Forum Gdańsk volunteer - event organization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Language switching functionality
+        const langEn = document.getElementById('lang-en');
+        const langDe = document.getElementById('lang-de');
+        
+        let currentLang = 'en';
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button states
+            langEn.classList.toggle('active', lang === 'en');
+            langDe.classList.toggle('active', lang === 'de');
+            
+            // Update content
+            document.querySelectorAll('[data-en][data-de]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-de');
+                }
+            });
+        }
+        
+        langEn.addEventListener('click', () => switchLanguage('en'));
+        langDe.addEventListener('click', () => switchLanguage('de'));
+        
+        // Initialize with English
+        switchLanguage('en');
+        
+        // Print functionality
+        window.addEventListener('beforeprint', function() {
+            // Ensure English is shown when printing unless German is specifically selected
+            if (currentLang === 'de') {
+                switchLanguage('de');
+            } else {
+                switchLanguage('en');
+            }
+        });
+    </script>
+</body>
+</html>

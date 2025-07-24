@@ -219,23 +219,6 @@ body {
 	}
 }
 
-/* Print styles for PDF generation */
-@media print {
-	.no-print {
-		display: none !important;
-	}
-
-	body {
-		background: white !important;
-		font-size: 12pt;
-		line-height: 1.4;
-	}
-
-	.print-break {
-		page-break-before: always;
-	}
-}
-
 /* Responsive design improvements */
 @media (max-width: 640px) {
 	.hero-title {
@@ -246,13 +229,5 @@ body {
 	.section-padding {
 		padding-top: 3rem;
 		padding-bottom: 3rem;
-	}
-}
-
-/* Dark mode support (for future enhancement) */
-@media (prefers-color-scheme: dark) {
-	.dark-mode-ready {
-		background-color: #1f2937;
-		color: #f9fafb;
 	}
 }

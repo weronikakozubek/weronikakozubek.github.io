@@ -5,5 +5,13 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: './', // For GitHub Pages deployment
+  base: './',
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        print: 'public/print.html'
+      }
+    }
+  }
 })

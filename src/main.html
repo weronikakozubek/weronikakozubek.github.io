@@ -2,9 +2,9 @@
 <nav
 	id="navbar"
 	class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 
-        border-b border-gray-200 transition-all duration-300 print:hidden"
+        border-b border-gray-200 transition-all duration-300"
 >
-	<div class="max-w-6xl mx-auto px-4 py-3">
+	<div class="max-w-6xl mx-auto px-4 py-2">
 		<div class="flex justify-between items-center">
 			<h1
 				id="nav-title"
@@ -15,7 +15,7 @@
 
 			<div class="flex items-center gap-4">
 				<!-- Desktop Menu -->
-				<div class="hidden md:flex space-x-6">
+				<div class="hidden md:flex space-x-6 items-center">
 					<a
 						href="#about"
 						class="text-gray-600 hover:text-blue-600 transition-colors"
@@ -51,6 +51,14 @@
 						data-de="Kontakt"
 						>Contact</a
 					>
+					<a
+						href="/print.html"
+						class="text-gray-600 hover:text-blue-600 transition-colors bg-blue-50 px-3 py-1 rounded-lg border border-blue-200"
+						data-en="Print Version"
+						data-de="Druckversion"
+						target="_blank"
+						>Print Version</a
+					>
 				</div>
 
 				<!-- Language Toggle -->
@@ -78,7 +86,7 @@
 <section
 	id="hero"
 	class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 
-  to-purple-50 pt-20 print:pt-12 print:px-8 relative overflow-hidden"
+  to-purple-50 pt-20 relative overflow-hidden"
 >
 	<div
 		class="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-indigo-100/20 to-purple-100/30 transform -translate-y-1/4"
@@ -104,7 +112,7 @@
 				<div class="flex flex-col sm:flex-row gap-4 mb-8">
 					<a
 						href="#contact"
-						class="print:hidden bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center"
+						class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center"
 						data-en="Get In Touch"
 						data-de="Kontakt aufnehmen"
 					>
@@ -156,9 +164,9 @@
 </section>
 
 <!-- Professional Summary -->
-<section id="about" class="py-20 print:pb-8 print:pt-12 bg-white">
+<section id="about" class="py-20 bg-white">
 	<div class="max-w-4xl mx-auto px-4">
-		<div class="text-center mb-16 print:mb-4 scroll-fade-in">
+		<div class="text-center mb-16 scroll-fade-in">
 			<h2
 				class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
 				data-en="Professional Summary"
@@ -184,9 +192,9 @@
 </section>
 
 <!-- Education -->
-<section id="education" class="py-20 print:py-4 bg-gray-50">
-	<div class="max-w-6xl mx-auto px-4 print:mt-8">
-		<div class="text-center mb-16 print:mb-6 scroll-fade-in">
+<section id="education" class="py-20 bg-gray-50">
+	<div class="max-w-6xl mx-auto px-4">
+		<div class="text-center mb-16 scroll-fade-in">
 			<h2
 				class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6"
 				data-en="Education"
@@ -258,7 +266,7 @@
 	</div>
 </section>
 
-<section id="experience" class="py-20 print:pb-8 bg-white print:bg-gray-50">
+<section id="experience" class="py-20 bg-white">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="text-center mb-16 scroll-fade-in">
 			<h2
@@ -293,7 +301,7 @@
 					>
 				</div>
 
-				<div class="grid md:grid-cols-2 print:sm:grid-cols-2 gap-8">
+				<div class="grid md:grid-cols-2 gap-8">
 					<div>
 						<h4
 							class="font-semibold text-gray-900 mb-3"
@@ -489,7 +497,7 @@
 			</div>
 
 			<!-- Prodent Clinic -->
-			<div class="print:pt-8">
+			<div>
 				<div
 					class="bg-white rounded-xl p-8 shadow-lg hover-lift scroll-fade-in"
 				>
@@ -525,7 +533,7 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="py-20 print:pt-8 print:pb-0 bg-gray-50">
+<section id="skills" class="py-20 bg-gray-50">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="text-center mb-16 scroll-fade-in">
 			<h2
@@ -671,7 +679,7 @@
 				</div>
 			</div>
 
-			<div class="scroll-fade-in print:pt-8 print:pb-8">
+			<div class="scroll-fade-in">
 				<h3
 					class="text-2xl font-bold text-gray-900 mb-8"
 					data-en="Core Competencies"
@@ -805,7 +813,7 @@
 	</div>
 </section>
 
-<section class="py-20 print:py-8 print:mt-72 bg-white">
+<section class="py-20 bg-white">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="text-center mb-16 scroll-fade-in">
 			<h2
@@ -1069,7 +1077,7 @@
 
 <section
 	id="contact"
-	class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white print:hidden"
+	class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
 >
 	<div class="max-w-4xl mx-auto px-4 text-center">
 		<div class="scroll-fade-in">
@@ -1141,7 +1149,7 @@
 	</div>
 </section>
 
-<footer class="bg-gray-900 text-white py-8 print:hidden">
+<footer class="bg-gray-900 text-white py-8 ">
 	<div class="max-w-6xl mx-auto px-4 text-center">
 		<p class="text-gray-400">© 2025 Dr Weronika Kozubek</p>
 	</div>
