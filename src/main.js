@@ -103,6 +103,9 @@ function createMobileMenu() {
 		<button id="mobile-lang-de" class="flex items-center px-2 py-1 rounded-full transition-all duration-200 text-sm font-medium">
 			🇩🇪 DE
 		</button>
+		<button id="mobile-lang-pl" class="flex items-center px-2 py-1 rounded-full transition-all duration-200 text-sm font-medium">
+			🇵🇱 PL
+		</button>
 	`;
 
 	// Create mobile menu button
@@ -124,11 +127,11 @@ function createMobileMenu() {
       <div class="flex justify-end items-center">
         <button class="text-gray-600 text-2xl" id="close-mobile-menu">&times;</button>
       </div>
-      <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="About" data-de="Über mich">About</a>
-      <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Education" data-de="Bildung">Education</a>
-      <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Experience" data-de="Erfahrung">Experience</a>
-      <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Skills" data-de="Fähigkeiten">Skills</a>
-      <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Contact" data-de="Kontakt">Contact</a>
+      <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="About" data-de="Über mich" data-pl="O mnie">About</a>
+      <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Education" data-de="Bildung" data-pl="Wykształcenie">Education</a>
+      <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Experience" data-de="Erfahrung" data-pl="Doświadczenie">Experience</a>
+      <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Skills" data-de="Fähigkeiten" data-pl="Umiejętności">Skills</a>
+      <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors text-lg" data-en="Contact" data-de="Kontakt" data-pl="Kontakt">Contact</a>
     </div>
   `;
 
@@ -319,7 +322,7 @@ function showNotification(message) {
 function initializeLanguageSystem() {
 	// Detect browser language
 	const browserLang = navigator.language.substring(0, 2);
-	const defaultLang = browserLang === "de" ? "de" : "en";
+	const defaultLang = browserLang === "de" ? "de" : browserLang === "pl" ? "pl" : "en";
 
 	// Set initial language
 	let currentLang = localStorage.getItem("cv-language") || defaultLang;
@@ -327,40 +330,52 @@ function initializeLanguageSystem() {
 	// Language toggle buttons
 	const langEnBtn = document.getElementById("lang-en");
 	const langDeBtn = document.getElementById("lang-de");
+	const langPlBtn = document.getElementById("lang-pl");
 	const mobileLangEnBtn = document.getElementById("mobile-lang-en");
 	const mobileLangDeBtn = document.getElementById("mobile-lang-de");
+	const mobileLangPlBtn = document.getElementById("mobile-lang-pl");
 
 	// Update active language button
 	function updateActiveLanguage(lang) {
 		// Desktop buttons
-		if (langEnBtn && langDeBtn) {
+		if (langEnBtn && langDeBtn && langPlBtn) {
 			langEnBtn.classList.remove("bg-blue-500", "text-white");
 			langDeBtn.classList.remove("bg-blue-500", "text-white");
+			langPlBtn.classList.remove("bg-blue-500", "text-white");
 			langEnBtn.classList.add("text-gray-600");
 			langDeBtn.classList.add("text-gray-600");
+			langPlBtn.classList.add("text-gray-600");
 
 			if (lang === "en") {
 				langEnBtn.classList.add("bg-blue-500", "text-white");
 				langEnBtn.classList.remove("text-gray-600");
-			} else {
+			} else if (lang === "de") {
 				langDeBtn.classList.add("bg-blue-500", "text-white");
 				langDeBtn.classList.remove("text-gray-600");
+			} else if (lang === "pl") {
+				langPlBtn.classList.add("bg-blue-500", "text-white");
+				langPlBtn.classList.remove("text-gray-600");
 			}
 		}
 
 		// Mobile buttons
-		if (mobileLangEnBtn && mobileLangDeBtn) {
+		if (mobileLangEnBtn && mobileLangDeBtn && mobileLangPlBtn) {
 			mobileLangEnBtn.classList.remove("bg-blue-500", "text-white");
 			mobileLangDeBtn.classList.remove("bg-blue-500", "text-white");
+			mobileLangPlBtn.classList.remove("bg-blue-500", "text-white");
 			mobileLangEnBtn.classList.add("text-gray-600");
 			mobileLangDeBtn.classList.add("text-gray-600");
+			mobileLangPlBtn.classList.add("text-gray-600");
 
 			if (lang === "en") {
 				mobileLangEnBtn.classList.add("bg-blue-500", "text-white");
 				mobileLangEnBtn.classList.remove("text-gray-600");
-			} else {
+			} else if (lang === "de") {
 				mobileLangDeBtn.classList.add("bg-blue-500", "text-white");
 				mobileLangDeBtn.classList.remove("text-gray-600");
+			} else if (lang === "pl") {
+				mobileLangPlBtn.classList.add("bg-blue-500", "text-white");
+				mobileLangPlBtn.classList.remove("text-gray-600");
 			}
 		}
 	}
@@ -370,8 +385,8 @@ function initializeLanguageSystem() {
 		currentLang = lang;
 		localStorage.setItem("cv-language", lang);
 
-		// Update all elements with data-en and data-de attributes
-		document.querySelectorAll("[data-en][data-de]").forEach((element) => {
+		// Update all elements with data-en, data-de, and data-pl attributes
+		document.querySelectorAll("[data-en][data-de][data-pl]").forEach((element) => {
 			const translation = element.getAttribute(`data-${lang}`);
 			if (translation) {
 				element.textContent = translation;
@@ -386,10 +401,14 @@ function initializeLanguageSystem() {
 		langEnBtn.addEventListener("click", () => switchLanguage("en"));
 	if (langDeBtn)
 		langDeBtn.addEventListener("click", () => switchLanguage("de"));
+	if (langPlBtn)
+		langPlBtn.addEventListener("click", () => switchLanguage("pl"));
 	if (mobileLangEnBtn)
 		mobileLangEnBtn.addEventListener("click", () => switchLanguage("en"));
 	if (mobileLangDeBtn)
 		mobileLangDeBtn.addEventListener("click", () => switchLanguage("de"));
+	if (mobileLangPlBtn)
+		mobileLangPlBtn.addEventListener("click", () => switchLanguage("pl"));
 
 	// Initialize with current language
 	switchLanguage(currentLang);
